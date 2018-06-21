@@ -1,34 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @story.title %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @story.user.username %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @story.body %>
-</p>
-
-<p>
-	<%= link_to 'Edit', edit_story_path(@story) %>
-</p>
-
-<div id="notes">
-	<%= render 'notes/form', note: @note %>
-	<% @story.notes.each do |note| %>
-		<p>
-			<%= note.author %> said...<br/>
-			<%= note.note_entry %>
-		</p>
-	<% end %>
+<div class="row">
+	<div class="col-sm-8">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+        <div class="row">
+          <div class="col-md-4"><b>Title: <%= @story.title.capitalize %></b></div>
+          <div class="col-md-4"><b>Started:</b> <%= @story.created_at.strftime('%b %d, %Y %l:%M%P') %></div>
+          <div class="col-md-4"><b>Last Edit:</b> <%= @story.updated_at.strftime('%b %d, %Y %l:%M%P') %></div>
+        </div>
+			</div>
+			<div class="panel-body" style="height:28em; overflow-y:scroll;">
+				<%= simple_format(@story.body.html_safe) %>
+			</div>
+			<div class="panel-footer">
+				<%= link_to 'Edit Story', edit_story_path(@story), class: "btn btn-success btn-sm" %>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<strong>Notes:</strong>
+			</div>
+			<div class="panel-body">
+				<ul>
+					<%= render 'notes/form', note: @note %>
+					<% @story.notes.each do |note| %>
+						<li>
+							<%= note.note_entry %>
+				    	<div class="pull-right">
+					    	<%= link_to 'Delete note', note, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %>
+					    </div>
+					  </li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
-
-<p> 
-	<%= link_to 'Back', stories_path %>
-</p>

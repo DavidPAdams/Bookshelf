@@ -8,14 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  	<div class="container">
-      <div class="pull-right">
-        <% if user_signed_in? %>
-          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %> 
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-        <% end %>
-      </div>
+  <body id="bookshelf">
+  	<div class="container-fluid">
+      <%= render 'layouts/navBar' %>
 	    <%= yield %>
 	  </div>
   </body>
