@@ -12,7 +12,7 @@
         <% @stories.each do |story| %>
           <div class="row">
             <li>
-              <div class="col-md-4"><b><%= link_to story.title.capitalize, story %></b></div>
+              <div class="col-md-4"><b><%= link_to story.title, story %></b></div>
               <div class="col-md-3"><b>Started:</b> <%= story.created_at.strftime('%b %d, %Y %l:%M%P') %></div>
               <div class="col-md-3"><b>Last Edit:</b> <%= story.updated_at.strftime('%b %d, %Y %l:%M%P') %></div>
               <div class="col-md-2">
