@@ -59,3 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'better_errors'
 gem 'hirb'
 gem 'devise'
+gem "rack", ">= 2.0.6"
+gem "loofah", ">= 2.2.3"
