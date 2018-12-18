@@ -8,19 +8,6 @@
       <div class="panel-heading">
         <strong>Notes:</strong>
       </div>
-      <div class="panel-body">
-        <ul>
-          <%= render 'notes/form', note: @note %>
-          <% @story.notes.each do |note| %>
-            <li>
-              <%= note.note_entry %>
-              <div class="pull-right">
-                <%= link_to 'Delete note', note, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
-            </li>
-          <% end %>
-        </ul>
-      </div>
     </div>
   </div>
 </div>
