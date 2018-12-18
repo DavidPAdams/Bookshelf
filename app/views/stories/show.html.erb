@@ -2,12 +2,12 @@
 
 <div class="row">
 	<div class="col-md-8">
-		<div class="panel panel-info">
+		<div class="panel panel-primary">
 			<div class="panel-heading">
         <div class="row">
-          <div class="col-md-4"><b>Title: <%= @story.title %></b></div>
-          <div class="col-md-4"><b>Started:</b> <%= @story.created_at.strftime('%b %d, %Y %l:%M%P') %></div>
-          <div class="col-md-4"><b>Last Edit:</b> <%= @story.updated_at.strftime('%b %d, %Y %l:%M%P') %></div>
+          <div class="col-md-6"><b>Title:</b><br> <em>"<%= @story.title %>"</em></div>
+          <div class="col-md-3"><b>Started:</b><br> <%= @story.created_at.strftime('%b %d, %Y %l:%M%P') %></div>
+          <div class="col-md-3"><b>Last Edit:</b><br> <%= @story.updated_at.strftime('%b %d, %Y %l:%M%P') %></div>
         </div>
 			</div>
 			<div class="panel-body" style="height:28em; overflow-y:scroll;">
@@ -18,8 +18,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-4">
-		<div class="panel panel-success">
+	<div class="col-md-4">
+		<div class="panel panel-info">
 			<div class="panel-heading">
 				<strong>Notes:</strong>
 			</div>

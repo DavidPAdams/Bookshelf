@@ -16,10 +16,12 @@ class StoriesController < ApplicationController
   # GET /stories/new
   def new
     @story = Story.new
+    @note = Note.new
   end
 
   # GET /stories/1/edit
   def edit
+    @note = Note.new
   end
 
   # POST /stories
