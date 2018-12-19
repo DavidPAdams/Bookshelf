@@ -27,12 +27,16 @@
 				<ul>
 					<%= render 'notes/form', note: @note %>
 					<% @story.notes.each do |note| %>
-						<li>
-							<%= note.note_entry %>
-				    	<div class="pull-right">
-					    	<%= link_to 'Delete note', note, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %>
-					    </div>
-					  </li>
+						<div class="row">
+							<li>
+								<div class="col-md-8">
+									<%= note.note_entry %>
+								</div>
+					    	<div class="col-md-4">
+						    	<%= link_to 'Delete note', note, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %>
+						    </div>
+						  </li>
+						</div>
 					<% end %>
 				</ul>
 			</div>

@@ -10,8 +10,8 @@
     <div class="panel-body">
       <ul>
         <% @stories.each do |story| %>
-          <div class="row">
-            <% if current_user.id == story.user.id %>
+          <% if current_user.id == story.user.id %>
+            <div class="row">
               <li>
                 <div class="col-md-4"><b><%= link_to story.title, story %></b></div>
                 <div class="col-md-3"><b>Started:</b> <%= story.created_at.strftime('%b %d, %Y %l:%M%P') %></div>
@@ -21,11 +21,10 @@
                   <%= link_to 'Delete', story, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %>
                 </div>
               </li>
-            <% end %>
-          </div>
+            </div>
+          <% end %>        
         <% end %>
       </ul>
     </div>
   </div>
-  
 </div>
