@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :validatable, authentication_keys: [:username]
 
   validates :email, presence: true, uniqueness: true
-  validates :username, presence: true, uniqueness: true 
+  # validates :username, presence: true, uniqueness: true 
 
   has_many :stories, dependent: :destroy
   has_many :notes, dependent: :destroy
