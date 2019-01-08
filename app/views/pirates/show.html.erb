@@ -7,3 +7,5 @@
   <strong>User email:</strong>
   <%= @user.email %>
 </p>
+
+<%= link_to 'Delete User Account', pirate_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
