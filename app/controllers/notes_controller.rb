@@ -57,7 +57,7 @@ class NotesController < ApplicationController
     back_id = @note.story_id
     @note.destroy
     respond_to do |format|
-      format.html { redirect_to story_path(back_id), notice: 'Note was successfully destroyed.' }
+      format.html { redirect_back(fallback_location: root_path) }
       format.json { head :no_content }
     end
   end
