@@ -13,11 +13,8 @@
           <% @story.notes.each do |note| %>
             <div class="row">
               <li>
-                <div class="col-md-8">
+                <div class="col-md-12">
                   <%= note.note_entry %>
-                </div>
-                <div class="col-md-4">
-                  <%= link_to 'Delete note', note, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %>
                 </div>
               </li>
             </div>
