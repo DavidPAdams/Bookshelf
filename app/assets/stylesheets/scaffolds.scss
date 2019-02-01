@@ -84,5 +84,7 @@ label {
 }
 
 #bookshelf {
-  background-color: #e8fcf8;
+  // background-color: #e8fcf8;
+  background: url(asset_path("alfons-morales-410757-unsplash.jpg")) center;
+  background-size: cover;
 }
