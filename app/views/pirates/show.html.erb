@@ -1,11 +1,18 @@
-<p>
-  <strong>User:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>User email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Delete User Account', pirate_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<div class="panel-group">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h2 class="panel-title">
+        User: <%= @user.username %>
+      </h2>
+    </div>
+    <div class="panel-body">
+      <p>
+        <strong>User email:</strong>
+        <%= @user.email %>
+      </p>
+    </div>
+    <div class="panel-footer">
+      <%= link_to 'Delete User Account', pirate_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
