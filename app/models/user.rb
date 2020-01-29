@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  before_save { self.email = email.downcase }
+  before_save :downcase_email
 
   # Include default devise modules. Others available are:
   # :confirmable, :recoverable, :lockable, :timeoutable and :omniauthable
@@ -15,5 +15,11 @@ class User < ApplicationRecord
 
   has_many :stories, dependent: :destroy
   has_many :notes, dependent: :destroy
+
+  private
+
+    def downcase_email
+      email.downcase!
+    end
   
 end
